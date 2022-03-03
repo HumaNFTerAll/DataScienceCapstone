@@ -15,11 +15,11 @@ min_payload = spacex_df['Payload Mass (kg)'].min()
 app = dash.Dash(__name__)
 
 # Create an app layout
-                                sites=spacex_df['Launch Site'].unique().tolist()
-                                sites.insert(0,'All Sites')
-                                app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
-                                        style={'textAlign': 'center', 'color': '#503D36',
-                                               'font-size': 40}),
+sites=spacex_df['Launch Site'].unique().tolist()
+sites.insert(0,'All Sites')
+app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
+        style={'textAlign': 'center', 'color': '#503D36',
+                'font-size': 40}),
                                 # TASK 1: Add a dropdown list to enable Launch Site selection
                                 # The default select value is for ALL sites
                                 dcc.Dropdown(
